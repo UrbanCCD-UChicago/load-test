@@ -1,0 +1,12 @@
+{
+  "name": "Socket-server",
+  "Version": "0.0.0.0",
+  "repository": {
+    "type": "git",
+    "url":"https://github.com/Mansi139/load-test.git"
+  },
+  "dependencies": {
+    "redis": "~2.6.2",
+    "socket.io": "~1.4.6"
+  }
+}
