@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '6'
+install:
+- npm install
+script:
+- npm test
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAJRHZSK7SXKUXZLNQ
+  secret_access_key:
+    secure: MZdwJM7uH0YvZaARYPPzrsTeI7QpK7reMHTdWTjiu2IvnOxbLhdQpag3b/EV5IO/YukxBgZyWqzA/ha1xbXm4ConOCiy3Iq3PEpDcdswJszM0tothJLw34cVkEdm8unUjuqMe2TrwCnZi/aig33fQsOalKP2722uZnyj+VXF1dD7aG5GuPY381TBmvUiuhGOOmsZC9ThqDtsr0wOcjIzBGYfBwNOnKGUng8sIAES2cm3XSCQrijhINEEsQwl4gkbGMnDLkeNc1ckooK/H+XCqzHESiknP9GYh3ZaPS2inYmBlsIUatyn+mFFRs4NKvY2H1xbqjgcNhCCzIMKuz55rj/cjOU4KURYWG6OHjXuhJvpKnMJ59Kuvmq4dTD54aoQWrVYg7yU6V/GfMfnPZAlOnp4Gy3NEh5W6p0Bb2YLoDLJ+3bFFArerukHTDQlH7j+wOU1L5O0H1wb5pIbC7O6p27/aLRT71j5xln0mMyQ2z05XKd3uBOiVkwFF+zho10YxxiqhlW1jvxrgkAQ2uFv4BCrse3QjGopDnyhlLcxdwkEjz2hK7abOfRRS34iewldPc8dDKcs9wpzYSTatBxjXPp0Hy7BZLqyjRl4wTkxWRlCAfmqqaz7CBFpWB1TyVLCTwRa3tYUAuO38rbOnpvUN/55Ydd+i1YRBd0I2BFpOog=
+  region: us-east-2
+  app: load-test
+  env: my-env
+  bucket_name: load-test-new
+  on:
+    repo: Mansi139/load-test.git
+notifications:
+  slack:
+    rooms:
+      secure: TPexyMFkW4kGWVxzxdWMxJljEL+q+1Unl/Az+cgOAHs3Txx4Oo5YBO9QHsXbzTmZ1/v+5JqYc/wnk/VAC7WUsCNijZP1tf9TufsRq3rz7Dm8/9Gatxgb2yNsqAlVWBzqhNeTt62AU7z+frXo4Ue1JQDBMpYukGNElzfYuTr2/8X6yZbm5x4cI/qFogBKV0QVhzOjdzQYvXeBePeTrlm1RHdny4veChyvKLAXYN+OwrI749r/XSkKK3Kk/C+thtXxpo0Yvp3jgCanFCfbWqr7+SPXb4FWnEHHbwVXqkDbYSC2kVIgm25FZ+lnp6Cs28exIsK63P0fCuOBLCkjJgiQkx1c2RNRXaOpxOR820wiE126vCfthoF5f+ndeeMMMIT4ve6fwBKbUKcLyRKasiCYR+5eINopdnOctbbf4xdjZt0Abnfn2U+pM269iJAPEcY6C/9QFyYJJrpEarfRlQYNjshrhu/XFSPldhdHYj9NS5MWHLvs/Sg58djas9L1lB9NRS4AKo6JakKXOgsmUrx79xVZCqXGaHLx+LjYzMwULyj+R2Xq03AW9lXgFxVOtwpYohlj0DBkmvlfizISTCMzeKNh9GRI4FHR784FOZchQCQ+pB+yPy9sZeD/UcoiHlyxgBNhw2eJrlXnYxvCOxhsad3iXZPs2Twv2uFnN9Yb6PY=

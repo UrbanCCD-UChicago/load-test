@@ -1,7 +1,9 @@
-const _ = require('underscore');
+"use strict";
+
+var _ = require('underscore');
 
 const redis = require('redis').createClient({
-    host: process.env.REDIS_HOST || 'localhost', 
+    host: process.env.REDIS_HOST || 'localhost',
     port: 6379
 });
 
@@ -13,18 +15,18 @@ const io = require("socket.io")(app, {
 app.listen(8083);
 
 redis.subscribe('plenario_observations');
-redis.on('message', (channel, msg) => { 
+redis.on('message', (channel, msg) => {
     let parsed;
     try {
         parsed = JSON.parse(msg);
         for (let msg of parsed) {
-            broadcast(msg)        
+            broadcast(msg)
         }
     }
     catch(e) {
         broadcast(msg)
     }
-    
+
 });
 
 function broadcast(msg) {
