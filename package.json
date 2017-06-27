@@ -11,6 +11,8 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "aws-sdk": "^2.77.0",
+    "bluebird": "^3.5.0",
     "body-parser": "~1.15.2",
     "exit": "~0.1.2",
     "nodeunit": "~0.9.4",
@@ -18,8 +20,6 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "redis-server",
-    "start": "node server.js",
     "start": "node client.js"
   }
 }
